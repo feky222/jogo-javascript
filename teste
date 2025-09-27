@@ -1,0 +1,51 @@
+let nome = "nanda";
+var idade = 15;
+const cpf = "12345678910";
+let vivo = true;
+
+console.log("CPF cliente:" + cpf);
+console.log(typeof(cpf));
+console.log(typeof(idade));
+console.log(typeof(vivo));
+
+let num1 = 10;
+let num2 = 5;
+
+// + - * /
+
+console.log(num1 / num2);
+console.log(num1 = num2);
+
+// > < == ou === != !==
+let idadeCliente = 19;
+let idadeFernanda = "19";
+if (idadeCliente > 18 then prompt("Produto liberado.": String))
+
+if (idadeCliente > 18){
+    console.log("Entrou no sistema.");
+} else if ( idadeCliente > 13){
+    console.log("Acessou parte do sistema.");
+} else {
+    console.log("Não entrou no sistema.");
+}
+
+// || = ou
+
+let media = 6;
+let faltas = 35;
+
+if (media >= 6 && faltas < 50;){
+    console.log("Passou!");
+}
+
+let somaNumeros = (num1, num2) =>;{
+ let resultado = num1 + num2;
+
+ return resultado;
+}
+
+function subtracaoNumeros (num1, num2){
+     return num1 - num2;
+}
+
+console.log(somaNumeros(10, 5));
