@@ -1,17 +1,25 @@
 let campoChute = document.getElementById("campoChute");
 let botaoChutar = document.getElementById("botaoChutar");
 let mensagem =  document.getElementById("mensagem");
+var secaoChutes = document.getElementById("secao-chutes");
+var listaDeChutes = document.getElementById("listaDeChutes");
 
 let numeroSecreto ;
 
+var chutesDoUsuario = [];
+
 function iniciarJogo() {
      numeroSecreto = Math.floor(Math.random() * 100) + 1;
+     chutesDoUsuario = [];
 
      mensagem.textContent = "";
      campoChute.value = "";
      botaoChutar.textContent = "Chutar!";
 
      campoChute.disabled = false;
+
+     secaoChutes.style.display = 'none';
+     listaDeChutes.textContent = '';
      campoChute.focus();
      console.log(numeroSecreto);
 
@@ -29,6 +37,12 @@ function verificarChute(){
          campoChute.value = '';
          return;
     }
+
+    chutesDoUsuario.push(chute);
+
+    secaoChutes.style.display = 'block';
+
+    listaDeChutes.textContent = chutesDoUsuario.join(', ');
 
     if (chute === numeroSecreto){
         mensagem.textContent = "Parabéns você acertou o número " + numeroSecreto + "!";
@@ -56,5 +70,11 @@ function finalizarJogo(){
      botaoChutar.removeEventListener('click', verificarChute);
      botaoChutar.addEventListener('click', iniciarJogo);
 }
+
+campoChute.addEventListener('keypress', function(evento) {
+    if (evento.key === 'Enter') {
+        verificarChute();
+    }
+});
 
 iniciarJogo();
